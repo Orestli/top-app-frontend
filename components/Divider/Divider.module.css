@@ -1,8 +1,8 @@
 .hr {
-  width: 100%;
-  height: 1px;
-  margin: 20px 0;
+	width: 100%;
+	height: 1px;
+	margin: 20px 0;
 
-  border: none;
-  background: var(--gray-light);
+	border: none;
+	background: var(--gray-light);
 }

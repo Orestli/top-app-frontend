@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useScrollY } from '../../hooks/useScrollY';
 import { useAnimation, motion } from 'framer-motion';
 import styles from './Up.module.css';
-import {ButtonIcon} from "../ButtonIcon";
+import { ButtonIcon } from '../ButtonIcon';
 
 export const Up: React.FC = () => {
   const controls = useAnimation();
@@ -25,7 +25,12 @@ export const Up: React.FC = () => {
       animate={controls}
       initial={{ opacity: 0 }}
     >
-      <ButtonIcon appearance='primary' icon='up' onClick={scrollToTop} />
+      <ButtonIcon
+        appearance="primary"
+        icon="up"
+        aria-label="Наверх"
+        onClick={scrollToTop}
+      />
     </motion.div>
   );
 };

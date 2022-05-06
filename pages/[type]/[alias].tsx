@@ -1,5 +1,4 @@
 import { withLayout } from '../../layout';
-import axios from 'axios';
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -17,6 +16,7 @@ import { firstLevelMenu } from '../../utils/helpers';
 import TopPageComponent from '../../page-components/TopPageComponents';
 import { topPageApi } from '../../utils/api/topPage';
 import { productApi } from '../../utils/api/product';
+import { Error404 } from '../404';
 import Head from 'next/head';
 
 interface TopPageProps extends Record<string, unknown> {
@@ -27,8 +27,8 @@ interface TopPageProps extends Record<string, unknown> {
 }
 
 const TopPage: NextPage<TopPageProps> = ({ page, products, firstCategory }) => {
-  if (!page) {
-    return null;
+  if (!page || !products) {
+    return <Error404 />;
   }
 
   return (
@@ -64,7 +64,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 

@@ -2,17 +2,18 @@ import React from 'react';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import { NextPage } from 'next';
 import Head from 'next/head';
+import Router from 'next/router';
 import ym from 'react-yandex-metrika';
 import { YMInitializer } from 'react-yandex-metrika';
 import '../styles/globals.css';
 
-const MyApp: NextPage<AppProps> = ({ Component, pageProps, router }) => {
-  router.events.on('routeChangeComplete', (url) => {
-    if (typeof window !== 'undefined') {
-      ym('hit', url);
-    }
-  });
+Router.events.on('routeChangeComplete', (url) => {
+  if (typeof window !== 'undefined') {
+    ym('hit', url);
+  }
+});
 
+const MyApp: NextPage<AppProps> = ({ Component, pageProps, router }) => {
   return (
     <>
       <Head>
