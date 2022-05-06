@@ -2,8 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--black);
+  background: #f5f6f8;
+
+  font-family: 'Noto Sans Display', sans-serif;
 }
 
 a {
@@ -13,4 +15,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.visuallyHidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+:root {
+  --black: #3b434e;
+  --gray: #a4a4a4;
+  --gray-light: #ebebeb;
+  --gray-dark: #6c7077;
+  --white: white;
+  --primary: #7351f5;
+  --primary-hover: #6748e7;
+  --red: #fc836d;
+  --red-light: #fea291;
+  --green: #007b48;
+  --green-light: #c8f8e4;
+  --font-family: 'Noto Sans Display', sans-serif;
 }
